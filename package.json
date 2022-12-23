@@ -1,5 +1,5 @@
 {
-  "name": "rescript-test",
+  "name": "@danielo515/rescript-test",
   "version": "4.0.0",
   "bin": {
     "retest": "bin/retest.mjs"
