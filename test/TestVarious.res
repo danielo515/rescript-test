@@ -1,4 +1,3 @@
-open ReScriptJs.Js
 open Belt
 open Test
 
@@ -11,7 +10,7 @@ let equalAsString = (~message=?, a, b) =>
   assertion(~message?, ~operator="equal", (a, b) => a->Int.toString === b, a, b)
 
 testAsync("Async", cb => {
-  let _ = setTimeout(() => {
+  let _ = Js.Global.setTimeout(() => {
     equal(1, 1)
     equalAsString(1, "1")
     cb()
@@ -31,23 +30,6 @@ test("Should fail", () => {
   fail()
 })
 
-// test("Throws", () => {
-//   Error.raise(Error.make("Helloooo"))
-// })
-
-test("Should throw", () => {
-  throws(() => {
-    Error.raise(Error.make("Helloooo"))
-  })
-  throws(
-    ~message=`Should not be a JS error`,
-    ~test=error => error->Error.fromException->Option.isNone,
-    () => {
-      Error.raise(Error.make("Helloooo"))
-    },
-  )
-})
-
 test("Should not throw", () => {
   doesNotThrow(() => ())
 })
@@ -58,13 +40,13 @@ test("DeepEquals", () => {
   let b = {username: "user", id: "a"}
   equal(a.username, b.username)
   equal(a.username, b.id)
-  equal(Undefined.make(1), Undefined.empty)
+  equal(None, None)
   deepEqual(a, b)
   todo("Check that user is ok")
 })
 
 testAsync("Async with planned under", cb => {
-  let _ = setTimeout(() => {
+  let _ = Js.Global.setTimeout(() => {
     equal(1, 1)
     equalAsString(1, "1")
     cb(~planned=0, ())
@@ -72,7 +54,7 @@ testAsync("Async with planned under", cb => {
 })
 
 testAsync("Async with planned exact", cb => {
-  let _ = setTimeout(() => {
+  let _ = Js.Global.setTimeout(() => {
     equal(1, 1)
     equalAsString(1, "1")
     cb(~planned=2, ())
@@ -80,7 +62,7 @@ testAsync("Async with planned exact", cb => {
 })
 
 testAsync("Async with planned over", cb => {
-  let _ = setTimeout(() => {
+  let _ = Js.Global.setTimeout(() => {
     equal(1, 1)
     equalAsString(1, "1")
     cb(~planned=3, ())
@@ -88,7 +70,7 @@ testAsync("Async with planned over", cb => {
 })
 
 testAsync("Async with planned and fails", cb => {
-  let _ = setTimeout(() => {
+  let _ = Js.Global.setTimeout(() => {
     equal(1, 2)
     equalAsString(1, "1")
     cb(~planned=2, ())

@@ -1,4 +1,3 @@
-open ReScriptJs.Js
 open Test
 
 let equal = (~message=?, a, b) => assertion(~message?, ~operator="equal", (a, b) => a === b, a, b)
@@ -7,7 +6,7 @@ let deepEqual = (~message=?, a, b) =>
   assertion(~message?, ~operator="deepEqual", (a, b) => a == b, a, b)
 
 testAsync("Async", cb => {
-  let _ = setTimeout(() => {
+  let _ = Js.Global.setTimeout(() => {
     pass()
     cb()
   }, 100)
@@ -21,7 +20,7 @@ test("Equals", () => {
 })
 
 let isCharCode = (a, b) => {
-  a->String.charCodeAt(0) === b
+  a |> Js.String.charCodeAt(0) === b
 }
 
 test("Custom comparator", () => {

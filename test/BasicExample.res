@@ -1,4 +1,3 @@
-open ReScriptJs.Js
 open Test
 
 let intEqual = (~message=?, a: int, b: int) =>
@@ -14,7 +13,7 @@ test("Equals", () => {
 })
 
 let isCharCode = (a, b) => {
-  a->String.charCodeAt(0) === b
+  a |> Js.String.charCodeAt(0) === b
 }
 
 test("Custom comparator", () => {

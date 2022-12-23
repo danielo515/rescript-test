@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@ryyppy/rescript-promise@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@ryyppy/rescript-promise/-/rescript-promise-2.1.0.tgz#a33861274c41360cfbe872cf489f3dcb8dd526e6"
-  integrity sha512-+dW6msBrj2Lr2hbEMX+HoWCvN89qVjl94RwbYWJgHQuj8jm/izdPC0YzxgpGoEFdeAEW2sOozoLcYHxT6o5WXQ==
-
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
@@ -364,13 +359,6 @@ punycode@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-
-rescript-js@1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/rescript-js/-/rescript-js-1.0.0-beta.2.tgz#f04a259396dde22178b43cebd1b3dbd3a4f94a60"
-  integrity sha512-eWq9ga4tnzXpED1IkDtmmkMBoUN2Vy4FPeZ9ge5ur0vHSolf7QhpnpGoPY0hkTXfwXQuFlPw5g2g5nWCEmIkVQ==
-  dependencies:
-    "@ryyppy/rescript-promise" "^2.1.0"
 
 rescript@^10.0.0:
   version "10.0.1"
